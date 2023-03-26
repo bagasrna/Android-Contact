@@ -69,6 +69,7 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
         public TextView tvTelepon;
 
         public ImageView ivAvatar;
+        public TextView tvAlamat;
 
         public VHContact(View rowView) {
             super(rowView);
@@ -77,6 +78,7 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
             this.tvEmail = rowView.findViewById(R.id.tvEmail);
             this.tvTelepon = rowView.findViewById(R.id.tvTelepon);
             this.ivAvatar = rowView.findViewById(R.id.ivAvatar);
+            this.tvAlamat = rowView.findViewById(R.id.tvAlamat);
         }
     }
 
@@ -96,6 +98,8 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
         vh.tvNama.setText(c.nama);
         vh.tvEmail.setText(c.email);
         vh.tvTelepon.setText(c.telepon);
+        vh.ivAvatar.setImageResource(c.avatarId);
+        vh.tvAlamat.setText(c.alamat);
     }
 
     @Override

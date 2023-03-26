@@ -42,9 +42,17 @@
 
     <ImageView
         android:id="@+id/ivAvatar"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="308dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAlamat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tvTelepon"
+        app:layout_constraintTop_toBottomOf="@+id/tvTelepon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

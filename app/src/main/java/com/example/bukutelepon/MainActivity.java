@@ -20,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         List<Contact> contacts = new ArrayList<>();
-        contacts.add(new Contact("Si A", "sia@ub.ac.id", "0811"));
-        contacts.add(new Contact("Si B", "sib@ub.ac.id", "0812"));
-        contacts.add(new Contact("Si C", "sic@ub.ac.id", "0813"));
-        contacts.add(new Contact("Si D", "sid@ub.ac.id", "0814"));
-        contacts.add(new Contact("Si E", "sie@ub.ac.id", "0815"));
-        contacts.add(new Contact("Si F", "sif@ub.ac.id", "0816"));
-        contacts.add(new Contact("Si G", "sig@ub.ac.id", "0817"));
-        contacts.add(new Contact("Si H", "sih@ub.ac.id", "0818"));
-        contacts.add(new Contact("Si I", "sii@ub.ac.id", "0819"));
-        contacts.add(new Contact("Si J", "sij@ub.ac.id", "0810"));
+        contacts.add(new Contact("Bagas", "bagas@ub.ac.id", "081156784595", R.drawable.av1, "Malang"));
+        contacts.add(new Contact("Raditya", "raditya@ub.ac.id", "081236747539", R.drawable.av2, "Madiun"));
+        contacts.add(new Contact("Nafi", "nafi@ub.ac.id", "081337639643", R.drawable.av3, "Kediri"));
+        contacts.add(new Contact("Ahmad", "ahmad@ub.ac.id", "081405416753", R.drawable.av4, "Lamongan"));
+        contacts.add(new Contact("Fathoni", "fathoni@ub.ac.id", "081586375654", R.drawable.av5, "Solo"));
+        contacts.add(new Contact("Meganata", "meganatas@ub.ac.id", "081676546789", R.drawable.av6, "Pacitan"));
+        contacts.add(new Contact("Akbar", "akbar@ub.ac.id", "081734873789", R.drawable.av7, "Lumajang"));
+        contacts.add(new Contact("Budi", "budi@ub.ac.id", "081856107534", R.drawable.av8, "Bekasi"));
+        contacts.add(new Contact("Mahda", "mahda@ub.ac.id", "081917896578", R.drawable.av9, "Tangerang"));
+        contacts.add(new Contact("Aldy", "aldy@ub.ac.id", "081034890266", R.drawable.av10, "Medan"));
 
         // Buat adapter
         ContactAdapter cAdapter = new ContactAdapter(this, contacts);
