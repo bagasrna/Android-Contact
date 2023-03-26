@@ -1,15 +1,19 @@
 package com.example.bukutelepon;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -62,7 +66,7 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
         };
     }
 
-    class VHContact extends RecyclerView.ViewHolder {
+    class VHContact extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView tvInisial;
         public TextView tvNama;
         public TextView tvEmail;
@@ -70,6 +74,7 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
 
         public ImageView ivAvatar;
         public TextView tvAlamat;
+        ImageButton ibDelete;
 
         public VHContact(View rowView) {
             super(rowView);
@@ -79,8 +84,40 @@ public class ContactAdapter extends RecyclerView.Adapter implements Filterable {
             this.tvTelepon = rowView.findViewById(R.id.tvTelepon);
             this.ivAvatar = rowView.findViewById(R.id.ivAvatar);
             this.tvAlamat = rowView.findViewById(R.id.tvAlamat);
+            this.ibDelete = rowView.findViewById(R.id.ibDelete);
+
+            ibDelete.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == ibDelete.getId()){
+                AlertDialog.Builder builder = new AlertDialog.Builder(ctx)
+                        .setTitle("Delete Item")
+                        .setMessage("Are you sure you want to delete this item?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                int position = getAdapterPosition();
+                                if (position != RecyclerView.NO_POSITION) {
+                                    contacts.remove(position);
+                                    notifyItemRemoved(position);
+                                }
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
         }
     }
+
 
     @NonNull
     @Override

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintBottom_toTopOf="@+id/rvKontak"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="30dp" />
